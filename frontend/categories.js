@@ -1,8 +1,14 @@
+import img1 from "./media/setup.jpg"
+import img2 from "./media/accessories.jpg"
+import img3 from "./media/game.jpg"
+import img4 from "./media/console.jpg"
+import img5 from "./media/laptop.jpg"
+
 export default [
   {
     id: 1,
     img: {
-      src: "./media/setup.jpg",
+      src: img1,
       alt: "setup"
     },
     category: "Setup",
@@ -10,7 +16,7 @@ export default [
   {
     id: 2,
     img: {
-      src: "./media/accessories.jpg",
+      src: img2,
       alt: "accessories"
     },
     category: "Accessoir",
@@ -18,7 +24,7 @@ export default [
   {
     id: 3,
     img: {
-      src: "./media/game.jpg",
+      src: img3,
       alt: "games"
     },
     category: "Games",
@@ -26,7 +32,7 @@ export default [
   {
     id: 4,
     img: {
-      src: "./media/console.jpg",
+      src: img4,
       alt: "console"
     },
     category: "Consoles",
@@ -35,7 +41,7 @@ export default [
   {
     id: 5,
     img: {
-      src: "./media/laptop.jpg",
+      src: img5,
       alt: "laptop"
     },
     category: "Laptop",
