@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import ApiClient from "../API/apiClient";
 const apiClient = new ApiClient();
 
+import img1 from "../media/header.png"
+
 const categories = [
   {
     label:'All Categories',
@@ -144,7 +146,7 @@ export default function Shop() {
   return (
     <div className="shop-home-container">
       <div className="header-shop">
-        <img src="../media/header.png" alt="Shop hero"/>
+        <img src={img1} alt="Shop hero"/>
         <div className="header-shop-info">
           <span>Gaming Store</span>
           <h1>Shop</h1>

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import ApiClient from "../API/apiClient";
 const apiClient = new ApiClient();
 import globalError from '../globalProps/globalError';
+import registerImg from '../media/img1.jpg'
 
 export default function Register() {
     const [registerState, setRegisterState] = useState({
@@ -89,7 +90,7 @@ export default function Register() {
     <div>
 
         <div className="register-auth">
-            <img className='register-img' src="../media/img1.jpg" alt="" />
+            <img className='register-img' src={registerImg} alt="" />
 
             <form onSubmit={handleSubmit} action="/register" className="register-el">
                 

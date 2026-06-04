@@ -5,6 +5,9 @@ import { small } from 'motion/react-client'
 import ApiClient from "../API/apiClient";
 const apiClient = new ApiClient();
 
+import vid1 from "../media/vid3.mp4"
+import supportImg from "../media/img6.jpg"
+
 export default function Contact() {
 
     const [support , setSupport] = React.useState({username:'' , email:'' , message:''})
@@ -81,7 +84,7 @@ export default function Contact() {
 
             <div className="contact-page">
             <section className="purpose">
-                <video className="contact-vid" src="../media/vid3.mp4" autoPlay loop muted playsInline />
+                <video className="contact-vid" src={vid1} autoPlay loop muted playsInline />
                 <div className="purpose-text">
                     <h2>Reach out for fast support</h2>
                     <p>
@@ -121,7 +124,7 @@ export default function Contact() {
                     {alert.field && <p style={{textAlign:'center'}} className={alert.success ? 'text-success' : alert.error ? 'text-error' : ''}>{alert.msg}</p>}
                 </form>
 
-                <img src="../media/img6.jpg" className="img-contact" alt="Support and contact" />
+                <img src={supportImg} className="img-contact" alt="Support and contact" />
             </section>
             </div>
 

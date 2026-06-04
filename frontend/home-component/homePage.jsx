@@ -4,6 +4,11 @@ import filtering from "../filtering"
 import ProductCarousel from "../functionality/slideProducts"
 import { Link } from 'react-router-dom'
 
+import vid1 from "../media/vid1.mp4"
+import img1 from "../media/layout2.png"
+import img2 from "../media/layout.png"
+import img3 from "../media/beSeller.jpg"
+
 export default function HomePage(props){
     
     const category = categories.map((category)=>{
@@ -32,7 +37,7 @@ export default function HomePage(props){
     <div>
         <div className="img-container">    
             <video className="video" autoPlay loop muted>
-                <source src="../media/vid1.mp4"></source>
+                <source src={vid1}></source>
             </video>
             </div>
         
@@ -54,7 +59,7 @@ export default function HomePage(props){
             </div>
 
             <div className="home-page-layout0">
-                <img src="../media/layout2.png" alt="" />
+                <img src={img1} alt="" />
                 <div className="home-page-layout0-info">
                     <p>ABOUT OUR PLATFORM</p>
                     <h1>BUILT FOR GAMERS, DESIGNED FOR TRUST</h1>
@@ -68,7 +73,7 @@ export default function HomePage(props){
             </div>
 
             <div className="home-page-layout1">
-                <img src="../media/layout.png" alt="" />
+                <img src={img2} alt="" />
                 <div className="home-page-layout1-info">
                     <h1>THE ULTIMATE <span style={{color:'gold'}}>GAMING</span> MARKETPLACE FOR EVERYONE </h1>
                     <p>A secure and powerfull platform connecting gamers, sellers, and trusted partners worldwide.</p>
@@ -83,7 +88,7 @@ export default function HomePage(props){
             </div>
 
             <div className="home-page-layout3">
-                <img src="../media/beSeller.jpg" alt="" />
+                <img src={img3} alt="" />
                 <div className="home-page-layout3-info">
                     <p>FOR SELLERS</p>
                     <h1>START SELLING TODAY</h1>

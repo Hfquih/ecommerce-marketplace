@@ -1,5 +1,6 @@
 import React from "react"
 import '../styling/aboutUs.css'
+import support from "../media/img7.png"
 
 export default function AboutUs(){
     
@@ -29,7 +30,7 @@ export default function AboutUs(){
                 </div>
                 <div className="hero-image">
                     <div className="image-mask"></div>
-                    <img src="../media/img7.png" alt="Gaming collection" />
+                    <img src={support} alt="Gaming collection" />
                 </div>
             </section>
 

@@ -6,6 +6,7 @@ import ApiClient from "../API/apiClient";
 const apiClient = new ApiClient();
 import useAuth from '../globalProps/useAuth';
 import globalError from '../globalProps/globalError';
+import loginImg from '../media/img1.jpg'
 
 export default function Login(){
 
@@ -91,7 +92,7 @@ export default function Login(){
     <div>
 
         <div className="login-auth"> 
-            <img className='login-img' src="../media/img1.jpg" alt="" />
+            <img className='login-img' src={loginImg} alt="" />
 
             <form onSubmit={handleSubmit} action="/register" className="login-el">
                 
