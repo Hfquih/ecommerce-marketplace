@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400|Inconsolata:400');
+
+:root {
+  /* COLORS  */
+  /* primary */
+  --primary-0: #f0efff;
+  --primary-50: #d8d6ff;
+  --primary-100: #c1beff;
+  --primary-200: #aaa5ff;
+  --primary-300: #938dff;
+  --primary-400: #7b74ff;
+  /* main */
+  --primary-500: #645cff;
+  --primary-600: #554ed9;
+  --primary-700: #4640b3;
+  --primary-800: #37338c;
+  --primary-900: #282566;
+  --primary-1000: #191740;
+  --primary-1100: #0a0919;
+  /* grey */
+  --grey-0: #fafbfc;
+  --grey-50: #f2f4f8;
+  --grey-100: #eaedf3;
+  --grey-200: #e2e7ef;
+  --grey-300: #dbe0ea;
+  --grey-400: #d3dae6;
+  --grey-500: #cbd3e1;
+  --grey-600: #adb3bf;
+  --grey-700: #8e949e;
+  --grey-800: #70747c;
+  --grey-900: #51545a;
+  --grey-1000: #333538;
+  --grey-1100: #141516;
+
+  /* rest */
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+
+  /* typography */
+  --headingFont: 'Inconsolata', monospace;
+  --bodyFont: 'Montserrat', sans-serif;
+  --smallText: 0.7em;
+  /* rest */
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-1000);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  /* box shadows */
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.change-info-page {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  background: radial-gradient(circle at top left, rgba(100,92,255,0.14), transparent 32%), var(--backgroundColor);
+}
+
+.change-info-card {
+  width: min(100%, 620px);
+  background: var(--white);
+  color: var(--textColor);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-4);
+  border: 1px solid rgba(101, 92, 255, 0.14);
+  padding: 2rem;
+}
+
+.change-info-header {
+  margin-bottom: 1.75rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--primary-600);
+}
+
+.change-info-header h2 {
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.subtext {
+  color: var(--grey-700);
+  line-height: 1.7;
+}
+
+.change-info-alert {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  background: var(--grey-50);
+  border: 1px solid transparent;
+}
+
+.change-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  color: var(--grey-900);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--grey-300);
+  background: var(--white);
+  color: var(--grey-1100);
+  font-family: var(--bodyFont);
+  font-size: 0.98rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus {
+  border-color: var(--primary-500);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(100, 92, 255, 0.12);
+}
+
+.border-error {
+  border-color: var(--red-dark) !important;
+}
+
+.border-success {
+  border-color: var(--green-dark) !important;
+}
+
+.form-note {
+  color: var(--grey-700);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.primary-button {
+  width: 100%;
+  padding: 1rem 1.15rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: var(--transition);
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+}
+
+@media (max-width: 720px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .change-info-card {
+    padding: 1.5rem;
+  }
+}
+
+

@@ -1,0 +1,319 @@
+import React from "react";
+import "../styling/shop.css";
+import { Link } from "react-router-dom";
+import ApiClient from "../API/apiClient";
+const apiClient = new ApiClient();
+
+const categories = [
+  {
+    label:'All Categories',
+    value:''
+  },
+
+  {
+    label:'Console',
+    value:'console'
+  },
+
+  {
+    label:'Laptop',
+    value:'laptop'
+  },
+
+  {
+    label:'Setup',
+    value:'setup'
+  },
+
+  {
+    label:'Accessory',
+    value:'accessory'
+  },
+
+  {
+    label:'Video Game',
+    value:'video_game'
+  }
+];
+
+const sortOptions = [
+  {
+    label:'All',
+    value:''
+  },
+  {
+    label:'Best Seller',
+    value:'-sold'
+  },
+
+  {
+    label:'New Arrival',
+    value:'-createdAt'
+  },
+
+  {
+    label:'Most Viewed',
+    value:'-views'
+  },
+
+  {
+    label:'Trending Now',
+    value:'-sold -views -createdAt'
+  },
+];
+
+const availabilityOptions = [
+  {
+    label: 'All',
+    value:''
+  },
+  {
+    label:'In Stock',
+    value:'active'
+  },
+
+  {
+    label:'soon in stock',
+    value:'out_of_stock'
+  }
+];
+
+export default function Shop() {
+  const [products , setProducts] = React.useState({})
+  const [selected, setSelected] = React.useState({category:'' , filter:'' , status:'' , search:'' , gtePrice:'' , ltePrice:''});
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const [numOfPages, setNumOfPages] = React.useState(1);
+
+  React.useEffect(()=>{
+    const params = new URLSearchParams({...selected , page: currentPage}).toString()
+    const productsCustomer = async()=>{
+      try{
+        const {data} = await apiClient.get(`/products/customer/?${params}`)
+        setProducts(data)
+        setNumOfPages(data.numOfPages)
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    }
+    productsCustomer();
+  },[selected , currentPage])  
+   
+  function handleInput(e){
+    const {name , value} = e.currentTarget 
+
+    setSelected(prev=>{
+      return{
+        ...prev,
+        [name]:value
+      }
+    })
+  }
+
+  const getPageButtons = () => {
+      const pages = [];
+
+      if (numOfPages <= 5) {
+        for (let i = 1; i <= numOfPages; i++) {
+            pages.push(i);
+        }
+      } else {
+        pages.push(1);
+
+        if (currentPage > 3) {
+            pages.push('...');
+        }
+
+        for (
+            let i = Math.max(2, currentPage - 1);
+            i <= Math.min(numOfPages - 1, currentPage + 1);
+            i++
+        ) {
+            pages.push(i);
+        }
+
+        if (currentPage < numOfPages - 2) {
+            pages.push('...');
+        }
+
+        pages.push(numOfPages);
+      }
+
+    return pages;
+    };
+
+  return (
+    <div className="shop-home-container">
+      <div className="header-shop">
+        <img src="../media/header.png" alt="Shop hero"/>
+        <div className="header-shop-info">
+          <span>Gaming Store</span>
+          <h1>Shop</h1>
+          <p>Explore curated gear, accessories, and new releases for every player.</p>
+        </div>
+      </div>
+
+      <div className="shop-content">
+        <aside className="shop-sidebar">
+
+          <div className="shop-select-filter">
+            <select name="category" id="" className="shop-filter-select" onChange={handleInput}>
+              <option value="" disabled defaultValue>Select Categories</option>
+              <option value="">All Category</option>
+              <option value="console">Console</option>
+              <option value="laptop">Laptop</option>
+              <option value="setup">Setup</option>
+              <option value="accessory">Accessory</option>
+              <option value="video_game">Video Game</option>
+            </select>
+          </div>
+
+          <div className="shop-filter-box">
+            <h3>Categories</h3>
+            <div className="filter-pill-group">
+              {categories.map((category) => (
+                <button
+                  className={`filter-pill ${selected.category === category.value ? "active" : ""}`}
+                  onClick={() => setSelected(prev=>{return{...prev , category:category.value}})}
+                  type="button"
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="shop-select-filter">
+            <select name="filter" id="" className="shop-filter-select" onChange={handleInput}>
+              <option value="" disabled defaultValue>Sort By</option>
+              <option value="">All Products</option>
+              <option value="-sold">Best Seller</option>
+              <option value="-createdAt">New Arrival</option>
+              <option value="-views">Most Viewed</option>
+              <option value="-sold -views -createdAt">Trending Now</option>
+            </select>
+          </div>
+
+          <div className="shop-filter-box">
+            <h3>Sort by</h3>
+            <div className="filter-pill-group">
+              {sortOptions.map((option) => (
+                <button
+                  className={`filter-pill ${selected.filter === option.value ? "active" : ""}`}
+                  onClick={() => setSelected(prev=>{return { ...prev , filter:option.value}})}
+                  type="button"
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="shop-select-filter">
+            <select name="status" id="" className="shop-filter-select" onChange={handleInput}>
+              <option value="" disabled defaultValue>Availability</option>
+              <option value="">All</option>
+              <option value="active">In Stock</option>
+              <option value="out_of_stock">soon in stock</option>
+            </select>
+          </div>
+
+          <div className="shop-filter-box">
+            <h3>Availability</h3>
+            <div className="filter-pill-group">
+              {availabilityOptions.map((option) => (
+                <button
+                  className={`filter-pill ${selected.status === option.value ? "active" : ""}`}
+                  onClick={() => setSelected(prev=>{return{...prev , status:option.value}})}
+                  type="button"
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="shop-filter-box">
+            <h3>Price</h3>
+            <div>
+              <label htmlFor="gtePrice">Great Than:</label>
+              <input type="number" name="gtePrice" id="gtePrice" onChange={handleInput}/>
+            </div>
+            <div>
+              <label htmlFor="ltePrice">Less Than:</label>
+              <input type="number" name="ltePrice" id="ltePrice" onChange={handleInput}/>
+            </div>
+          </div>
+        </aside>
+
+        <main className="shop-main">
+          <div className="shop-toolbar">
+            <div>
+              <h2>Featured products</h2>
+              <p className="toolbar-copy">Filtered results for the latest gaming collection.</p>
+            </div>
+
+            <div className="shop-search">
+              <input
+                type="search"
+                name='search'
+                value={selected.search}
+                onChange={(event) =>  setSelected(prev=>{return{...prev , search:event.target.value}})}
+                placeholder="Search products..."
+              />
+            </div>
+          </div>
+
+          <div className="shop-grid">
+            {products.products?.length > 0 ? (
+              products.products.map((product) => (
+                <article key={product._id} className="shop-product-card">
+                  <div className="product-card-badge">{product.category}</div>
+                  <img src={product.image} alt={product.name} />
+                  <div className="shop-product-copy">
+                    <h3>{product.name}</h3>
+                    <div className="shop-product-meta">
+                      <span className="price">${product.price}</span>
+                      <div className="info-div-pro">
+                        <span className={`stock ${product.status.replace(" ", "-").toLowerCase()}`}>
+                          {product.status}
+                        </span>
+                        <button className="customer-product-info"><Link to={`/allInfo/${product._id}`} target="_blank"><i className="fa-solid fa-eye view-pro"></i></Link></button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </article>
+              ))
+            ) : (
+              <div className="empty-state">
+                <h3>No products found</h3>
+                <p>Try adjusting your filters or search terms to see more items.</p>
+              </div>
+            )}
+          </div>
+
+          <div className="pagination-div-customer">
+            <div>
+              <p>Showing 1 to 8 of {products.products?.length} Products</p>
+            </div>
+
+            <div>
+            {getPageButtons().map((item, index) => {
+              if (item === '...') {
+                return <span key={index}>...</span>;
+              }
+
+              return (
+                <button key={index} onClick={() => setCurrentPage(item)} className={`button-pag-customer ${currentPage === item ? 'active-pag-customer' : ''}`}>{item}</button>
+              );
+            })}
+            </div>
+
+          </div>
+
+        </main>
+
+      </div>
+    </div>
+  );
+}

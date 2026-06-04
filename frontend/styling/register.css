@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400|Inconsolata:400');
+
+:root {
+  /* COLORS  */
+  /* primary */
+  --primary-0: #f0efff;
+  --primary-50: #d8d6ff;
+  --primary-100: #c1beff;
+  --primary-200: #aaa5ff;
+  --primary-300: #938dff;
+  --primary-400: #7b74ff;
+  /* main */
+  --primary-500: #645cff;
+  --primary-600: #554ed9;
+  --primary-700: #4640b3;
+  --primary-800: #37338c;
+  --primary-900: #282566;
+  --primary-1000: #191740;
+  --primary-1100: #0a0919;
+  /* grey */
+  --grey-0: #fafbfc;
+  --grey-50: #f2f4f8;
+  --grey-100: #eaedf3;
+  --grey-200: #e2e7ef;
+  --grey-300: #dbe0ea;
+  --grey-400: #d3dae6;
+  --grey-500: #cbd3e1;
+  --grey-600: #adb3bf;
+  --grey-700: #8e949e;
+  --grey-800: #70747c;
+  --grey-900: #51545a;
+  --grey-1000: #333538;
+  --grey-1100: #141516;
+
+  /* rest */
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+
+  /* typography */
+  --headingFont: 'Inconsolata', monospace;
+  --bodyFont: 'Montserrat', sans-serif;
+  --smallText: 0.7em;
+  /* rest */
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-1000);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  /* box shadows */
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--backgroundColor);
+}
+
+.register-auth{
+    width: 100%;
+    max-width: 1000px;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.register-img{
+    width: 45%;
+    height: 890px;
+    border-radius: 20px 0px 0px 20px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.register-el{
+    width: 900px;
+    height: 890px;
+    background-color: var(--grey-300);
+    padding: 20px;
+    text-align: center;
+    border-radius: 0px 20px 20px 0px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.login-auth{
+    width: 100%;
+    max-width: 800px;
+    margin: 8rem auto;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.login-img{
+    width: 30%;
+    height: 490px;
+    border-radius: 20px 0px 0px 20px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.login-el{
+    width: 600px;
+    height: 490px;
+    background-color: var(--grey-300);
+    padding: 20px;
+    text-align: center;
+    border-radius: 0px 20px 20px 0px;
+    box-shadow: 0px 0px 5px black;
+}
+
+h1{
+    font-family: var(--headingFont);
+    margin-bottom: 20px;
+}
+
+label{
+    display: block;
+    margin:10px 0px 15px 0px;
+    font-family: var(--bodyFont);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+input{
+    width: 100%;
+    padding: 11px;
+    border: 2px solid var(--grey-600);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-family: var(--bodyFont);
+    border: 2px solid var(--grey-700);
+    background-color: var(--grey-100);
+}
+
+.container-role{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.role-div{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 100px;
+}
+
+.role-input{
+    margin-top: 0px;
+}
+
+.radio-input{
+    background-color: #0a0919;
+}
+
+.div-controle{
+    position: relative;
+}
+
+small{
+    position: absolute;
+    bottom: -2px;
+    left: 1px;
+    font-weight: bold;
+    font-family: var(--bodyFont);
+    color: darkred;
+}
+
+.rgt-btn{
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg , var(--primary-400) , var(--primary-900));
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px black;
+    transition: transform 0.3s ease;
+}
+
+.rgt-btn:hover{
+    box-shadow: 0px 8px 14px black;
+    transform: translateY(-3px);
+}
+
+.alert{
+    margin-top: 10px;
+    font-family: var(--bodyFont);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.text-success{
+    color: darkgreen;
+}
+
+.text-error{
+    color: var(--red-dark);
+}
+
+.border-success{
+    border-color: darkgreen;
+}
+
+.border-error{
+    border-color: darkred;
+}

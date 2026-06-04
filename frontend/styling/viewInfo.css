@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400|Inconsolata:400');
+
+:root {
+  /* COLORS  */
+  /* primary */
+  --primary-0: #f0efff;
+  --primary-50: #d8d6ff;
+  --primary-100: #c1beff;
+  --primary-200: #aaa5ff;
+  --primary-300: #938dff;
+  --primary-400: #7b74ff;
+  /* main */
+  --primary-500: #645cff;
+  --primary-600: #554ed9;
+  --primary-700: #4640b3;
+  --primary-800: #37338c;
+  --primary-900: #282566;
+  --primary-1000: #191740;
+  --primary-1100: #0a0919;
+  /* grey */
+  --grey-0: #fafbfc;
+  --grey-50: #f2f4f8;
+  --grey-100: #eaedf3;
+  --grey-200: #e2e7ef;
+  --grey-300: #dbe0ea;
+  --grey-400: #d3dae6;
+  --grey-500: #cbd3e1;
+  --grey-600: #adb3bf;
+  --grey-700: #8e949e;
+  --grey-800: #70747c;
+  --grey-900: #51545a;
+  --grey-1000: #333538;
+  --grey-1100: #141516;
+
+  /* rest */
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+
+  /* typography */
+  --headingFont: 'Inconsolata', monospace;
+  --bodyFont: 'Montserrat', sans-serif;
+  --smallText: 0.7em;
+  /* rest */
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-1000);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  /* box shadows */
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--bodyFont);
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.header {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.product-view {
+    margin: 2rem auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+    border-radius: 1rem;
+    box-shadow: var(--shadow-3);
+    max-width: var(--max-width);
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-2);
+    transition: transform 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+
+.all-info-cont {
+    flex: 1;
+    margin-left: 2rem;
+    color: var(--white);
+    animation: fadeInRight 1s ease-out;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeInRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.all-info-cont h1 {
+    font-family: var(--headingFont);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.div-flex-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.price-info, .stock-info, .discount {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.button-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    padding: 0.5rem;
+    background-color: var(--white);
+    border-radius: 2rem;
+    margin-right: 1rem;
+    color: var(--black);
+    box-shadow: var(--shadow-1);
+    transition: var(--transition);
+}
+
+.button-counter:hover {
+    box-shadow: var(--shadow-2);
+}
+
+.count-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.count-btn:hover {
+    color: var(--primary-500);
+}
+
+.cart-btn {
+    background: linear-gradient(135deg, var(--primary-300), var(--primary-1000));
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--white);
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow-2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-3);
+    background: linear-gradient(135deg, var(--primary-200), var(--primary-900));
+}
+
+.more-info {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: var(--max-width);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-2);
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.more-info h1 {
+    font-family: var(--headingFont);
+    margin-bottom: 1rem;
+    color: var(--primary-700);
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--grey-900);
+    white-space: pre-line;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-view {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .image {
+        margin-bottom: 1rem;
+    }
+
+    .all-info-cont {
+        margin-left: 0;
+    }
+
+    .all-info-cont h1 {
+        font-size: 2rem;
+    }
+
+    .div-flex-info {
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .button-counter {
+        width: 120px;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .cart-btn {
+        width: 100%;
+    }
+
+    .more-info {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .product-view {
+        padding: 0.5rem;
+    }
+
+    .all-info-cont h1 {
+        font-size: 1.5rem;
+    }
+
+    .div-flex-info {
+        font-size: 1rem;
+    }
+
+    .button-counter {
+        width: 100px;
+    }
+
+    .count-btn {
+        font-size: 1.2rem;
+    }
+
+    .cart-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .more-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}    
