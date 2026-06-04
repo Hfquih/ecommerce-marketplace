@@ -1,8 +1,13 @@
+import img1 from "./media/view.png"
+import img2 from "./media/trending.png"
+import img3 from "./media/bestSeller.png"
+import img4 from "./media/new.jpg"
+
 export default [
   {
     id: 1,
     img: {
-      src: "./media/view.png",
+      src: img1,
       alt: "view"
     },
     title: "MOST VIEWED",
@@ -11,7 +16,7 @@ export default [
   {
     id: 2,
     img: {
-      src: "./media/trending.png",
+      src: img2,
       alt: "trending"
     },
     title: "TRENDING NOW",
@@ -20,7 +25,7 @@ export default [
   {
     id: 3,
     img: {
-      src: "./media/bestSeller.png",
+      src: img3,
       alt: "best-seller"
     },
     title: "BEST SELLER",
@@ -29,7 +34,7 @@ export default [
   {
     id: 4,
     img: {
-      src: "./media/new.jpg",
+      src: img4,
       alt: "new"
     },
     title: "NEW ARRIVAL",
