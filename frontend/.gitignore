@@ -3,17 +3,15 @@ node_modules/
 
 # Environment variables
 .env
-.env.local
 .env.*
+backend/.env
+frontend/.env
 
-# Build output
-dist/
-build/
-coverage/
-.nyc_output/
+# Private keys and secrets
+key/
 
 # Logs
-logs/
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -22,21 +20,31 @@ pnpm-debug.log*
 
 # Cache
 .cache/
+*.cache
 .eslintcache
-
-# Runtime files
-tmp/
-*.pid
-*.seed
-
-# Secrets
-key/
-
-# IDEs
-.vscode/
-!.vscode/extensions.json
-.idea/
 
 # OS files
 .DS_Store
 Thumbs.db
+
+# Temporary files
+tmp/
+backend/tmp/
+*.pid
+*.seed
+
+# Build output
+dist/
+build/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
