@@ -14,7 +14,7 @@ export default function HomePage(props){
     const category = categories.map((category)=>{
         return (
             <div className="home-page-category-img">
-                <img src={category.img.src} alt={category.img.src} />
+                <img src={category.img.src} alt={category.img.alt} />
                 <p>{category.category}</p>
             </div>
         )
