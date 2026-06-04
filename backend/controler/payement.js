@@ -56,8 +56,8 @@ const stripePayement = async(req,res)=>{
             userId: req.user._id.toString()
         },
 
-        success_url:'http://localhost:5173/success' ,
-        cancel_url:'http://localhost:5173/cancel'
+        success_url:process.env.SUCCESS_PAYEMENT ,
+        cancel_url:process.env.CANCEL_PAYEMENT
     })
 
     res.status(StatusCodes.OK).json({url:session.url})
