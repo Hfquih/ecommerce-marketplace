@@ -32,6 +32,7 @@ export default function ProductSlider(){
                 loop
                 autoplay={{ delay: 3500, disableOnInteraction: false }}
                 breakpoints={{
+                    320: { slidesPerView: 2 },
                     420: { slidesPerView: 2 },
                     640: { slidesPerView: 2 },
                     768: { slidesPerView: 3 },

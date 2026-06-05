@@ -37,7 +37,7 @@ export default function HomePage(props){
             <div className="body-container">
                 <div className="body1">
                     <h1 style={{marginBottom:20}}>Welcome To Our Store</h1>
-                    <p>« Découvrez un morceau d’histoire avec cette pièce rare et intemporelle. Soigneusement conservée et sélectionnée à la main, chaque création raconte sa propre histoire, reflétant l’artisanat et le caractère d’une époque révolue. Parfaite pour les collectionneurs, les passionnés ou toute personne souhaitant posséder un fragment du passé, cette pièce allie nostalgie et authenticité, apportant charme et sophistication à votre espace ou collection. »</p>
+                    <p>« Discover a piece of history with this rare and timeless item. Carefully preserved and hand-selected, each piece tells its own unique story, reflecting the craftsmanship and character of a bygone era. Perfect for collectors, enthusiasts, or anyone looking to own a fragment of the past, this item combines nostalgia and authenticity, bringing charm and sophistication to your space or collection.»</p>
                 </div>
                         
                 <div className="center-top"><TopProduct/></div>
