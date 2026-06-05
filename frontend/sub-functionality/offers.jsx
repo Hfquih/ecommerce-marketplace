@@ -72,7 +72,7 @@ export default function Offers(){
 
           <div className="offer-card__items">
             {offer.orderItem.map((item) => (
-              <div key={item._id} className="offer-item">
+              <div key={item._id} className="offer-items">
                 <div className="offer-item__image">
                   <img src={item.image} alt={item.name} />
                 </div>

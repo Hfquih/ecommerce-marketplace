@@ -146,14 +146,10 @@ export default function Cart(){
                         <p>Cart</p>
                     </div>
 
-                    <i className="fa-solid fa-angles-right next-icon"></i>
-
                     <div className="cart-proccess">
                         <div className='div-style'></div>
                         <p>Checkout</p>
                     </div>
-
-                    <i className="fa-solid fa-angles-right"></i>
 
                     <div className="cart-proccess">
                         <div className='div-style'></div>
@@ -170,7 +166,7 @@ export default function Cart(){
 
                 <div className='cart-content'>
                     <div className='header-content'>
-                        <h2>Cart <span></span></h2>
+                        <h2>Cart</h2>
                         <button className='clear-cart' onClick={clearCart}><i className="fa-solid fa-x" style={{marginRight:20}}></i> Clear cart</button>
                     </div>
 

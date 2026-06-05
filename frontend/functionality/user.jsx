@@ -62,10 +62,10 @@ export default function User(props){
                             <p>Change Information</p>
                         </button>
 
-                        <div className='account-detail' onClick={signOut}>
+                        <button className='account-detail' onClick={signOut}>
                             <i className="fa-solid fa-arrow-right-from-bracket account-icon"></i>
                             <p>Sign Out</p>
-                        </div>
+                        </button>
                     </div>
 
                     <div className="account-info2">

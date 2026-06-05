@@ -130,7 +130,6 @@
   font-family: var(--bodyFont);
   font-weight: bold;
   box-shadow: 0px 0px 5px white;
-  margin-right: 10px;
 }
 
 .shop-filter-box:not(:last-child) {
@@ -410,6 +409,7 @@
   }
   .shop-select-filter{
     display: block;
+    margin-right: 10px;
   }
   .shop-grid{
     grid-template-columns: 1fr 1fr 1fr;

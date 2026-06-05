@@ -146,7 +146,7 @@ export default function Seller(props) {
           </section>
         </section>}
 
-        <section>{verifyShow==='offers' && <Offers/>}</section>
+        <section className='section-offer-seller'>{verifyShow==='offers' && <Offers/>}</section>
       </main>
     </div>
     </div>

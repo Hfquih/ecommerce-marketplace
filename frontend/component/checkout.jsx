@@ -187,14 +187,10 @@ export default function Checkout(){
                         <p>Cart</p>
                     </div>
 
-                    <i className="fa-solid fa-angles-right next-icon"></i>
-
                     <div className="cart-proccess">
                         <div className='div-style'>2</div>
                         <p>Checkout</p>
                     </div>
-
-                    <i className="fa-solid fa-angles-right"></i>
 
                     <div className="cart-proccess">
                         <div className='div-style'></div>
