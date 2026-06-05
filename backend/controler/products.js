@@ -107,7 +107,7 @@ const getProducts=async(req,res,next)=>{
 const getProductSeller = async(req,res)=>{
     const { params:{id:productId}} = req
 
-    const products = await product.findOne({_id:productId , status:'active'})
+    const products = await product.findOne({_id:productId ,  $or: [{status: 'active'}, {status: 'out_of_stock'}]})
 
     if(!products){
         throw new NotFound(`their is no product id who match: ${productId}`)
