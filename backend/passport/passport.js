@@ -4,7 +4,7 @@ const extractJWT = require('passport-jwt').ExtractJwt
 const fs = require('fs')
 const path =require('path')
 
-const PUB_KEY= process.env.JWT_PUBLIC_KEY
+const PUB_KEY= process.env.JWT_PUBLIC_KEY.replace(/\\n/g, '\n');
 
 const options={
     jwtFromRequest : extractJWT.fromAuthHeaderAsBearerToken(),

@@ -86,7 +86,7 @@ userSchema.pre('save' , async function(){
     this.password=await bcrypt.hash(this.password , salt)
 })
 
-const PRV_KEY= process.env.JWT_PRIVATE_KEY
+const PRV_KEY= process.env.JWT_PRIVATE_KEY.replace(/\\n/g, '\n');
 
 userSchema.methods.createJWT=function(){
     return jwt.sign({userId:this._id , firstName:this.firstName , lastName:this.lastName , role:this.role} , PRV_KEY , {algorithm:'RS256' , expiresIn:'1d'})
