@@ -2,6 +2,7 @@ import TopProduct from "../functionality/topProduct"
 import categories from "../categories"
 import filtering from "../filtering"
 import ProductCarousel from "../functionality/slideProducts"
+import ProductSlider from "../functionality/slideProducts"
 import { Link } from 'react-router-dom'
 
 import vid1 from "../media/vid1.mp4"
@@ -11,14 +12,6 @@ import img3 from "../media/beSeller.jpg"
 
 export default function HomePage(props){
     
-    const category = categories.map((category)=>{
-        return (
-            <div className="home-page-category-img">
-                <img src={category.img.src} alt={category.img.alt} />
-                <p>{category.category}</p>
-            </div>
-        )
-    })
 
     const filter = filtering.map((filter)=>{
         return(
@@ -39,7 +32,7 @@ export default function HomePage(props){
             <video className="video" autoPlay loop muted>
                 <source src={vid1}></source>
             </video>
-            </div>
+        </div>
         
             <div className="body-container">
                 <div className="body1">
@@ -51,10 +44,10 @@ export default function HomePage(props){
                         
             </div>
 
-            <div id="category" style={{padding:20}}>
-                <h1 style={{textAlign:'center'}}>Categories</h1>
-                <div className="home-page-category">   
-                    {category}
+            <div id="category" style={{padding:20}} className="category-hom-page">
+                
+                <div className="home-page-category">
+                    <ProductSlider/>
                 </div>
             </div>
 
@@ -109,12 +102,12 @@ export default function HomePage(props){
                             {
                                 icon: '★',
                                 title: 'Trusted sellers',
-                                description: 'Verified vendors, curated product quality, and consistent reviews.'
+                                description: 'Verified vendors, curated product quality.'
                             },
                             {
                                 icon: '⚡',
                                 title: 'Fast & Reliable',
-                                description: 'Built for speed, simplicity, and reliability, our marketplace delivers a smooth gaming experience for buyers and sellers.'
+                                description: 'Built for speed, simplicity, and reliability.'
                             },
                             {
                                 icon: '🛡️',

@@ -194,6 +194,11 @@ h1{
     color: white;
 }
 
+/*end header */
+
+
+/*begin video css */
+
 .img-container{
     width: 100%;
     max-width: 100%;
@@ -207,7 +212,13 @@ h1{
     object-fit: cover;
 }
 
+/*end video css*/
+
+
+/*begin body container */
 .body-container{
+    width: 100%;
+    max-width: 100%;
     display: grid;
     gap: 4rem;
     grid-template-columns: 1fr 1fr;
@@ -220,7 +231,6 @@ h1{
 }
 
 .body1{
-    position: relative;
     font-family: var(--bodyFont);
     font-size: 1.1rem;
 }
@@ -254,6 +264,11 @@ h1{
     cursor: pointer;
 }
 
+.func1{
+    width: 100%;
+    max-width: 100%;
+}
+
 h3{
     margin-bottom: 20px;
     letter-spacing: 2px;
@@ -268,30 +283,18 @@ h3{
 
 /*begin categories */
 
-.home-page-category{
+.category-hom-page{
     width: 100%;
     max-width: 100%;
+}
+
+.home-page-category{
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    
     align-items: center;
 }
-.home-page-category-img{
-    width: 150px;
-    border-radius: 50%;
-    text-align: center;
-    margin: 20px 5px;
-}
 
-.home-page-category-img img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-.home-page-category-img p{
-    font-size: 1rem;
-    font-weight: bold;
-}
 
 /*end categories */
 
@@ -799,6 +802,40 @@ h3{
 
     .footer {
         padding: 2rem 1rem;
+    }
+}
+
+@media (max-width : 470px){
+
+    .btn-pro{
+        font-size: 2rem;
+    }
+
+    .img2{
+        width: 180px;
+    }
+
+    .home-page-layout1-info{
+        width: 300px;
+        left: 50%;
+    }
+
+    .home-page-layout-filter-info{
+        
+        left: 38%;
+    }
+
+    .home-page-layout3-info{
+        left: 35%;
+        width: 220px;
+    }
+
+    .home-page-layout2{
+        padding: 10px;
+    }
+
+    .why-choose-us-grid{
+        gap: 1rem;
     }
 }
 
