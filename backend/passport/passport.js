@@ -4,9 +4,7 @@ const extractJWT = require('passport-jwt').ExtractJwt
 const fs = require('fs')
 const path =require('path')
 
-const pathToKey = path.join(__dirname , '../key/id_rsa_pub.pem')
-
-const PUB_KEY= fs.readFileSync(pathToKey , 'utf8')
+const PUB_KEY= process.env.JWT_PUBLIC_KEY
 
 const options={
     jwtFromRequest : extractJWT.fromAuthHeaderAsBearerToken(),
