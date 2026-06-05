@@ -439,9 +439,6 @@
 }
 
 @media (max-width: 600px) {
-  .shop-home-container {
-    padding-bottom: 24px;
-  }
 
   .header-shop-info {
     left: 35%;
@@ -461,7 +458,14 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media (max-width : 470px){
+
+  .header-shop-info{
+    width: 150px;
+    left: 30%;
+  }
+
   .shop-product-copy h3{
     font-size: 0.9rem;
   }
