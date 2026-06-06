@@ -107,8 +107,8 @@ export default function Contact() {
                                 <div className="home-component-flex">
                                     <Link to="/" className="link"><p className="style-component">Home</p></Link>
                                     <Link to="/shop" className="link"><p className="style-component">Shop</p></Link>
-                                    <Link to="/contact" className="link"><p className="style-component">Contact</p></Link>
-                                    <Link to="/aboutUs" className="link"><p className="style-component active-component">About Us</p></Link>
+                                    <Link to="/contact" className="link"><p className="style-component active-component">Contact</p></Link>
+                                    <Link to="/aboutUs" className="link"><p className="style-component">About Us</p></Link>
                                 </div>
             
                                 <div className="web-info"> 
