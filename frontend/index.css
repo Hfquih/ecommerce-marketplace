@@ -70,6 +70,7 @@
 
 
 .header{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -806,12 +807,28 @@ h3{
 
 @media (max-width : 470px){
 
+    .func1-cont{
+        height: 370px;
+    }
+
     .btn-pro{
         font-size: 2rem;
     }
 
     .img2{
-        width: 180px;
+        width: 150px;
+        height: 150px;
+        margin:0px 20px 10px 20px;
+        border-radius: 100%;
+    }
+
+    .func1 h3{
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .func1 p{
+        font-size: 0.9rem;
     }
 
     .home-page-layout1-info{
@@ -835,6 +852,23 @@ h3{
 
     .why-choose-us-grid{
         gap: 1rem;
+    }
+
+    .body1{
+        width: 100%;
+        text-align: center;
+    }
+
+    .body1 h1{
+        text-align: center;
+        margin: 20px 0px 0px 0px;
+        font-size: 1.7rem;
+    }
+
+    .body1 p{
+        text-align: center;
+        margin: 20px 0px 0px 0px;
+        font-size: 0.9rem;
     }
 }
 
