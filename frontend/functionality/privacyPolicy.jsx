@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
 
     <div className="header">
     
-                    <h1 onClick={()=>setComponent('home')}>MINKIY</h1>
+                    <Link to="/" className="link"><h1>MINKIY</h1></Link>
                     <input type="checkbox" id="nav-toggle" className="nav-toggle"/>
                     <label htmlFor="nav-toggle" className="nav-toggle-btn"><i className="fa-solid fa-bars"></i></label>
                     <div className="home-component">
