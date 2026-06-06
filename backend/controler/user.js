@@ -89,7 +89,7 @@ const login = async(req,res,next)=>{
     const users = await user.findOne({email})
 
     if(!users){
-        throw new Unauthorized('invalid email')
+        throw new Unauthorized('invalid credentials')
     }
 
     if(users.isDeleted){
@@ -107,7 +107,7 @@ const login = async(req,res,next)=>{
     const isMatch = await users.comparePass(password)
 
     if(!isMatch){
-        throw new Unauthorized('invalid password')
+        throw new Unauthorized('invalid credentials')
     }
 
     const token = users.createJWT()
