@@ -3,8 +3,15 @@ const jwtStrategy = require('passport-jwt').Strategy
 const extractJWT = require('passport-jwt').ExtractJwt
 const fs = require('fs')
 const path =require('path')
+const {NotFound} = require('../errors')
 
 const PUB_KEY= process.env.JWT_PUBLIC_KEY.replace(/\\n/g, '\n');
+
+if(!process.env.JWT_PUBLIC_KEY){
+    throw new NotFound(
+    'environment variables are missing'
+  );
+}
 
 const options={
     jwtFromRequest : extractJWT.fromAuthHeaderAsBearerToken(),

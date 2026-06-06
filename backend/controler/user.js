@@ -2,9 +2,7 @@ const user=require('../connect/user')
 const {BadRequest , Unauthorized , NotFound} = require('../errors')
 const {StatusCodes} = require('http-status-codes')
 const bcrypt=require('bcryptjs')
-const cron = require('node-cron')
-const { Query } = require('mongoose')
-const crypto = require('crypto')
+const crypto=require('crypto')
 const nodemailer = require('nodemailer');
 
 
@@ -192,7 +190,6 @@ const getUsers = async (req,res,next)=>{
 }
 
 const updateUser = async (req,res,next)=>{
-
     if(req.body.password){
         const salt=await bcrypt.genSalt(10)
         req.body.password=await bcrypt.hash(req.body.password , salt)
@@ -203,7 +200,7 @@ const updateUser = async (req,res,next)=>{
     })
 
     if(!users){
-        throw new NotFound(`their is no user who have this id: ${userId}`)
+        throw new NotFound(`their is no user who have this id: ${req.user._id}`)
     }
 
     res.status(StatusCodes.OK).json({msg:"USER UPDATED"})
@@ -286,7 +283,7 @@ const forgotPassword = async (req , res)=>{
 
     await users.save()
 
-    const resetURL =`http://localhost:5173/reset-password/${resetToken}`
+    const resetURL =`${process.env.FRONTEND_URL}/reset-password/${resetToken}`
 
     await transporter.sendMail({
         from: process.env.EMAIL_USER,
@@ -303,7 +300,7 @@ const forgotPassword = async (req , res)=>{
         `
     })
 
-    res.status(200).json({msg:'Reset email sent'})
+    res.status(StatusCodes.OK).json({msg:'Reset email sent'})
 }
 
 const resetPassword = async (req,res)=>{
@@ -335,7 +332,7 @@ const resetPassword = async (req,res)=>{
 
     await users.save()
 
-    res.status(200).json({msg:'Password updated successfully'})
+    res.status(StatusCodes.OK).json({msg:'Password updated successfully'})
 }
  
 module.exports={
