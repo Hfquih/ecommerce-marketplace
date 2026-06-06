@@ -2,6 +2,8 @@
 
 A full-stack e-commerce marketplace built with React, Vite, Node.js, Express, and MongoDB. The platform supports three user roles—customers, sellers, and administrators—providing a complete online shopping and product management experience.
 
+Live App: https://ecommerce-marketplace-beryl.vercel.app
+
 ## Features
 
 ### Customer Features
