@@ -96,13 +96,26 @@ export default function ReturnRefound(){
     return (
         <div className="return-refund-container">
             <div className="header">
-                <h1><a className="link" href="/">MINKIY</a></h1>
-                                  
-                <div className="web-info-second">
-                    {token ? <Link to="/account"><i className="fa-regular fa-circle-user icon-second"></i></Link> : <Link to="/login"><i className="fa-regular fa-circle-user icon-second"></i></Link>}
-                    {users.role==='user' && <Link to="/cart"><i className="fa-solid fa-cart-arrow-down icon-second"></i></Link>}
-                </div>
-            </div>
+                
+                                <Link to="/" className="link"><h1>MINKIY</h1></Link>
+                                <input type="checkbox" id="nav-toggle" className="nav-toggle"/>
+                                <label htmlFor="nav-toggle" className="nav-toggle-btn"><i className="fa-solid fa-bars"></i></label>
+                                <div className="home-component">
+                                    <div className="home-component-flex">
+                                        <Link to="/" className="link"><p className="style-component active-component">Home</p></Link>
+                                        <Link to="/shop" className="link"><p className="style-component">Shop</p></Link>
+                                        <Link to="/contact" className="link"><p className="style-component">Contact</p></Link>
+                                        <Link to="/aboutUs" className="link"><p className="style-component">About Us</p></Link>
+                                    </div>
+                
+                                    <div className="web-info"> 
+                                        {token ? <Link to="/account"><i className="fa-regular fa-circle-user icon"></i></Link> : <Link to="/login" target="_blank"><i className="fa-regular fa-circle-user icon"></i></Link>}
+                                        {users.role !=='seller' && <Link to="/cart" target="_blank"><i className="fa-solid fa-cart-arrow-down icon"></i></Link>}
+                                    </div>
+                                </div>
+                                
+                
+                            </div>
 
             <div className="rr-content">
                 {/* Policy Highlights */}
