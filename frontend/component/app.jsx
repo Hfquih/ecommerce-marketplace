@@ -15,6 +15,12 @@ import { BrowserRouter , Route , Routes } from "react-router-dom";
 import ForgetPass from "../functionality/forgetPass";
 import ResetPass from "../functionality/resetPassword";
 import VerifyEmail from "../functionality/verifyEmail";
+import ShippingDelivery from "../functionality/shippingDelivery";
+import ReturnRefound from "../functionality/returnRefound";
+import Shop from "../home-component/shop";
+import Contact from "../home-component/contact";
+import AboutUs from "../home-component/aboutUs";
+import PrivacyPolicy from "../functionality/privacyPolicy";
 
 
 export default function App(){
@@ -22,6 +28,9 @@ export default function App(){
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>}></Route>
+                <Route path="/shop" element={<Shop/>}></Route>
+                <Route path="/contact" element={<Contact/>}></Route>
+                <Route path="/aboutUs" element={<AboutUs/>}></Route>
                 <Route path="/register" element={<Register/>}></Route>
                 <Route path="/login" element={<Login/>}></Route>
                 <Route path="/account" element={<Account/>}></Route>
@@ -37,6 +46,9 @@ export default function App(){
                 <Route path="/forgot-password" element={<ForgetPass/>}></Route>
                 <Route path="/reset-password/:token" element={<ResetPass/>}></Route>
                 <Route path="/verify-email/:token" element={<VerifyEmail/>}></Route>
+                <Route path="/shipping-delivery" element={<ShippingDelivery/>}></Route>
+                <Route path="/return-refound" element={<ReturnRefound/>}></Route>
+                <Route path="/privacy-policy" element={<PrivacyPolicy/>}></Route>
             </Routes>
         </BrowserRouter>
     )

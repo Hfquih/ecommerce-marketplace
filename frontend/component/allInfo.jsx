@@ -67,8 +67,7 @@ export default function AllInfo(props){
                 }
 
             }catch(error){
-                console.error('Product detail fetch failed:', error)
-                
+                console.error('Product detail fetch failed:', error)  
             }
         }
 
