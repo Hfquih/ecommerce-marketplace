@@ -1,6 +1,7 @@
 import React from "react";
 import "../styling/shop.css";
 import { Link } from "react-router-dom";
+import { jwtDecode } from "jwt-decode"
 import ApiClient from "../API/apiClient";
 const apiClient = new ApiClient();
 
