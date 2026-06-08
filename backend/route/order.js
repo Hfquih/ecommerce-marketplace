@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const {getAllOrder , getOrderDash , createOrder , getOrder , currentUserOrder , updateOrder , cancelOrder , deleteItemOrder ,sellerOffer , sellerOfferAdmin} = require('../controler/order')
-const {requireAuth , authorization} = require('../middlwear/auth')
+const {getAllOrder , getOrderDash , createOrder , getOrder , currentUserOrder , updateOrder , cancelOrder , deleteItemOrder ,sellerOffer , sellerOfferAdmin} = require('../controller/order')
+const {requireAuth , authorization} = require('../middleware/auth')
 const {createOrderSchema} = require('../zod/schema')
 const validate = require('../zod/midZod')
 

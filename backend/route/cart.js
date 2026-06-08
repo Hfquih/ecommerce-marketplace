@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const {createCart , getCart , updateCart , deleteCart , clearCart} = require('../controler/cart')
-const {requireAuth , authorization} = require('../middlwear/auth')
+const {createCart , getCart , updateCart , deleteCart , clearCart} = require('../controller/cart')
+const {requireAuth , authorization} = require('../middleware/auth')
 const {addToCartSchema} = require('../zod/schema')
 const validate = require('../zod/midZod')
 

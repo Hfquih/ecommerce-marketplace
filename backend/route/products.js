@@ -1,8 +1,8 @@
 const express = require('express')
 const route = express.Router()
-const {getAllProductsAdmin , getAllProductsCustomer , getAllProducts , createProducts , getProducts , getProductSeller , updateProducts , softDeleteProductsUser , softDeleteProductsAdmin , restoreProductsAdmin} = require('../controler/products')
+const {getAllProductsAdmin , getAllProductsCustomer , getAllProducts , createProducts , getProducts , getProductSeller , updateProducts , softDeleteProductsUser , softDeleteProductsAdmin , restoreProductsAdmin} = require('../controller/products')
 const {localImage} = require('../controler/imageUpload')
-const {requireAuth , authorization}=require('../middlwear/auth')
+const {requireAuth , authorization}=require('../middleware/auth')
 const {createProductSchema} = require('../zod/schema')
 const validate = require('../zod/midZod')
 

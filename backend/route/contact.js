@@ -1,6 +1,6 @@
 const express=require('express')
 const router=express.Router()
-const support=require('../controler/contact')
+const support=require('../controller/contact')
 const {supportSchema} = require('../zod/schema')
 const validate = require('../zod/midZod')
 

@@ -1,7 +1,7 @@
 const express=require('express')
 const router = express.Router()
-const stripePayement = require('../controler/payement')
-const {requireAuth , authorization} = require('../middlwear/auth')
+const stripePayement = require('../controller/payement')
+const {requireAuth , authorization} = require('../middleware/auth')
 const {stripePaymentSchema} = require('../zod/schema')
 const validate = require('../zod/midZod')
 

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const {sellerDashborad , adminDashboard} = require('../controler/dashboard')
-const {requireAuth , authorization} = require('../middlwear/auth')
+const {sellerDashborad , adminDashboard} = require('../controller/dashboard')
+const {requireAuth , authorization} = require('../middleware/auth')
 
 router.get('/' , requireAuth , authorization('admin' , 'seller') ,sellerDashborad)
 

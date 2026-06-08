@@ -1,8 +1,8 @@
 const express = require('express')
 const route = express.Router()
-const {register , login , forgotPassword , resetPassword , verifyEmail , getAllUsers , getAllSellers , getUsers , updateUser , updateUserAdmin ,softdeleteUser , restoreUser} = require('../controler/user')
+const {register , login , forgotPassword , resetPassword , verifyEmail , getAllUsers , getAllSellers , getUsers , updateUser , updateUserAdmin ,softdeleteUser , restoreUser} = require('../controller/user')
 
-const {requireAuth , authorization}=require('../middlwear/auth')
+const {requireAuth , authorization}=require('../middleware/auth')
 
 const {registerSchema , loginSchema , resetPasswordSchema} = require('../zod/schema')
 const validate = require('../zod/midZod')
