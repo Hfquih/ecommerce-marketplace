@@ -9,11 +9,7 @@ const authorization=(...allowed)=>{
         if(!allowed.includes(req.user.role)){
             throw new Unauthorized('sorry , you dont have access to this route')
         }
-        if(req.user.isDeleted){
-            return res.status(403).json({
-            msg:'Account disabled'
-        });
-}
+    
         next()
     }
 }
