@@ -96,11 +96,9 @@ const login = async(req,res,next)=>{
       });
    }
 
-   if(!users.isVerified){
-    throw new Unauthorized(
-        'Please verify your email'
-    )
-}
+    if(!users.isVerified){
+        throw new Unauthorized('Please verify your email')
+    }
 
     const isMatch = await users.comparePass(password)
 

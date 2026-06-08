@@ -7,6 +7,7 @@ const validate = (schema) => {
       next();
     } catch (error) {
       console.log(error);
+      console.log(req.body);
 
       if (error instanceof ZodError) {
         return res.status(400).json({

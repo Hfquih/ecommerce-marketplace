@@ -1,8 +1,11 @@
 require('dotenv').config()
 require('express-async-errors')
-require('./cleaner/user')
-require('./cleaner/product')
-require('./cleaner/order')
+
+if (process.env.NODE_ENV !== "test") {
+  require('./cleaner/user');
+  require('./cleaner/product');
+  require('./cleaner/order');
+}
 
 const express = require('express')
 const app=express()
@@ -13,7 +16,6 @@ const cart=require('./route/cart')
 const dashboard=require('./route/dashboard')
 const payment=require('./route/payment')
 const support=require('./route/contact')
-const connect=require('./connect/connectDb')
 const notFound=require('./middleware/notFound')
 const errorHandler=require('./middleware/errorHandler')
 
@@ -65,15 +67,4 @@ app.use('/api/v1/support' , support)
 app.use(errorHandler)
 app.use(notFound)
 
-const port = process.env.PORT || 5000
-
-const start = async()=>{
-    try{
-        await connect(process.env.MONGO_URI)
-        app.listen(port , console.log('server lestening'))
-    }catch(error){
-        console.log(error)
-    }
-}
-
-start()
+module.exports=app
