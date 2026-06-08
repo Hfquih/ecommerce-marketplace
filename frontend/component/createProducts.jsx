@@ -50,7 +50,6 @@ export default function CreateProducts(){
             formData.append('image' , imageFile)
 
             const {data:{image:{src}}}=await apiClient.post('/products/upload' , formData , {headers:{Authorization:`Bearer ${token}`}})
-            console.log(src)
             setProducts(prevProducts=>{
                 return{
                     ...prevProducts,
