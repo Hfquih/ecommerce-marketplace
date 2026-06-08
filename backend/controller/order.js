@@ -3,7 +3,7 @@ const product = require('../connect/products')
 const Cart = require('../connect/cart')
 const {StatusCodes} = require('http-status-codes')
 const {BadRequest , NotFound} = require('../errors')
-const {checkPermission} = require('../middlwear/auth')
+const {checkPermission} = require('../middleware/auth')
 const { length } = require('zod')
 
 
