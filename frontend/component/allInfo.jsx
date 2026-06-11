@@ -6,9 +6,11 @@ import {jwtDecode} from "jwt-decode"
 import ApiClient from "../API/apiClient";
 const apiClient = new ApiClient();
 import useAuth from '../globalProps/useAuth';
+import footer from '../media/footer.png';
 
 export default function AllInfo(props){
     const [oneProduct , setOneProduct] = React.useState({})
+    const [openSection, setOpenSection] = React.useState('');
 
     const [item , setItems] = React.useState(
         {
@@ -148,28 +150,65 @@ export default function AllInfo(props){
                 <p className="description">{oneProduct.description}</p>
             </div>
         </div>
-        <div className="footer">
-            <div className="footer-brand">
-                <h2><a className="link" href="/">MINKIY</a></h2>
-                <p>Professional gaming marketplace for gamers, collectors and modern players.</p>
-                <p className="footer-note">Fast support, secure checkout, and curated products crafted for every gaming enthusiast.</p>
-            </div>
-            <div className="footer-links">
-                <div>
-                    <h3>Quick links</h3>
-                    <a href="/">Home</a>
-                    <a href="/about">About us</a>
-                    <a href="/contact">Contact</a>
-                    <a href="/viewProducts">Products</a>
-                </div>
-                <div>
-                    <h3>Contact</h3>
-                    <a href="mailto:support@minkiy.com">support@minkiy.com</a>
-                    <a href="tel:+15551234567">+1 (555) 123-4567</a>
-                    <p>Mon-Fri 9am - 7pm</p>
-                </div>
-            </div>
-        </div>
+        <div className="footer-container" style={{ backgroundImage: `url(${footer})` }}>
+                    <div className="footer-container-info">
+        
+                        <div className="footer-content-general">
+                            <h1>MINKIY</h1>
+                            <p>Your ultimate destination for gaming, and innovation. Discover. Shop. .Pay </p>
+                            <div className="footer-media">
+                                <a className="link-footer" href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f social-icon"></i></a>
+                                <a className="link-footer" href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram social-icon"></i></a>
+                                <a className="link-footer" href="https://youtube.com/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube social-icon"></i></a>
+                                <a className="link-footer" href="https://x.com/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-x-twitter social-icon"></i></a>
+                            </div>
+                        </div>
+        
+                        <div className="footer-div-toogle">
+                            <div className="mobile-footer-toggles">
+                                <button className={`mobile-toggle ${openSection==='shop' ? 'open' : ''}`} onClick={()=>setOpenSection(prev=> prev==='shop' ? '' : 'shop')}>SHOP</button>
+                                <button className={`mobile-toggle ${openSection==='customer' ? 'open' : ''}`} onClick={()=>setOpenSection(prev=> prev==='customer' ? '' : 'customer')}>CUSTOMER</button>
+                                <button className={`mobile-toggle ${openSection === 'company' ? 'open' : ''}`} onClick={()=>setOpenSection(prev=> prev==='company' ? '' : 'company')}>COMPANY</button>
+                                <button className={`mobile-toggle ${openSection === 'newsletter' ? 'open' : ''}`} onClick={()=>setOpenSection(prev=> prev==='newsletter' ? '' : 'newsletter')}>NEWSLETTER</button>
+                            </div>
+                        </div>
+        
+                        <div className={`footer-content-general-1 ${openSection==='shop' ? 'open-mobile' : ''}`}>
+                            <h1>SHOP</h1>
+                            <Link className="link-footer" to='/shop'><p>All Products</p></Link>
+                            <Link className="link-footer" to='/shop'><p>Laptops</p></Link>
+                            <Link className="link-footer" to='/shop'><p>Consoles</p></Link>
+                            <Link className="link-footer" to='/shop'><p>Accessories</p></Link>
+                            <Link className="link-footer" to='/shop'><p>Setup</p></Link>
+                        </div>
+        
+                        <div className={`footer-content-general-2 ${openSection==='customer' ? 'open-mobile' : ''}`}>
+                            <h1>CUSTOMER</h1>
+                            <Link className="link-footer" to='/contact'><p>Contact Us</p></Link>
+                            <Link className="link-footer" to='/shipping-delivery'><p>Shipping & Delivery</p></Link>
+                            <Link className="link-footer" to='/return-refound'><p>Return & Refound</p></Link>
+                            {token ? <Link className="link-footer" to='/account'><p>Track Order</p></Link> : <Link className="link-footer" to="/login" target="_blank"><p>Track Order</p></Link>}
+                        </div>
+        
+                        <div className={`footer-content-general-3 ${openSection==='company' ? 'open-mobile' : ''}`}>
+                            <h1>COMPANY</h1>
+                            <p className="link-footer" to='/aboutUs'>About Us</p>
+                            <Link className="link-footer" to='/privacy-policy'><p>Privacy Policy</p></Link>
+                        </div>
+        
+                        <div className={`footer-content-general-4 ${openSection==='newsletter' ? 'open-mobile' : ''}`}>
+                            <h1>NEWSLETTER</h1>
+                            <p>Stay updated with new releases and exclusive offers.</p>
+                        </div>
+        
+                    </div>   
+        
+                    <div className="footer-end">
+                    <div><p><i className="fa-regular fa-copyright icon-right"></i> <span style={{color:"mediumvioletred"}}>MINKIY.</span> All rights reserved.</p></div>
+                    <div><p><i className="fa-solid fa-lock icon-right"></i>Secure Payement. 100% protected.</p></div>
+                   </div> 
+        
+                   </div>
     </div>
     )
 }
