@@ -20,8 +20,9 @@ export default function Home(){
 
     const {token} = useAuth()
 
+    const navigate = useNavigate()
+
     function productShow(){
-        const navigate = useNavigate()
         navigate('/shop')
     }
 
