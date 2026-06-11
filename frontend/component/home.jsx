@@ -1,6 +1,6 @@
 import React from "react"
 import { jwtDecode } from "jwt-decode"
-import { Link , useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../globalProps/useAuth';
 import footer from '../media/footer.png';
 
@@ -21,7 +21,7 @@ export default function Home(){
     const {token} = useAuth()
 
     function productShow(){
-        const navigate = useNavigate
+        const navigate = useNavigate()
         navigate('/shop')
     }
 
