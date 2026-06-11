@@ -64,7 +64,7 @@ const getCart = async (req,res,next)=>{
     }
 
     const cartAlert = carts.items.map((item)=>{
-        console.log(item)
+        
         const cartIssue = item.product.stock < item.amount
 
         return{
@@ -85,7 +85,6 @@ const updateCart = async (req,res,next)=>{
     const {id} = req.params
     const {itemCount} = req.body 
 
-    console.log(itemCount)
 
     const carts = await Cart.findOne({user : req.user._id})
 
