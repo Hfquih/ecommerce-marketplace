@@ -1,6 +1,6 @@
 import React from "react"
 import { jwtDecode } from "jwt-decode"
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 import useAuth from '../globalProps/useAuth';
 import footer from '../media/footer.png';
 
@@ -20,6 +20,11 @@ export default function Home(){
 
     const {token} = useAuth()
 
+    function productShow(){
+        const navigate = useNavigate
+        navigate('/shop')
+    }
+
     const filter = filtering.map((filter)=>{
             return(
                 <div className="home-page-layout-filter-relative">
@@ -27,7 +32,7 @@ export default function Home(){
                     <div className="home-page-layout-filter-info">
                         <h1>{filter.title}</h1>
                         <p>{filter.description}</p>
-                        <button className="filter-explore-btn" onClick={()=>props.setComponent('shop')}>Explore</button>
+                        <button className="filter-explore-btn" onClick={productShow}>Explore</button>
                     </div>
                 </div>
             )
@@ -112,7 +117,7 @@ export default function Home(){
                                 <h1>THE ULTIMATE <span style={{color:'gold'}}>GAMING</span> MARKETPLACE FOR EVERYONE </h1>
                                 <p>A secure and powerfull platform connecting gamers, sellers, and trusted partners worldwide.</p>
                                 <div className="home-page-layout1-btn">
-                                    <button className="explore-cat-btn" onClick={()=>props.setComponent('shop')}>Explore Products <i className="fa-solid fa-arrow-right"></i></button>
+                                    <button className="explore-cat-btn" onClick={productShow}>Explore Products <i className="fa-solid fa-arrow-right"></i></button>
                                 </div>
                             </div>
                         </div>
